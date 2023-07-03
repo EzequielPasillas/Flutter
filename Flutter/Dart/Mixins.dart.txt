@@ -1,0 +1,50 @@
+abstract class Animal{
+	  
+} 
+
+abstract class Mamifero extends Animal{
+	  
+} 
+
+abstract class Ave extends Animal{
+	  
+} 
+
+abstract class Pez extends Animal{
+	  
+} 
+
+mixin Volar{
+  
+  void volar(){
+    print('Estoy volando');
+  }
+  
+}
+
+mixin Caminar{
+  
+  void caminar() => print('Estoy caminando');
+
+}
+
+mixin Nadador{
+  
+  void nadar() => print('Estoy nadando');
+
+}
+
+
+class Delfin extends Mamifero with Nadador{}
+
+class Murcielago extends Mamifero with Caminar, Volar{
+}
+
+void main(){
+  final flipper = new Delfin();
+  flipper.nadar();
+  
+  final murci = new Murcielago();
+  murci.volar();
+  murci.caminar();
+ }
